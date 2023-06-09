@@ -33,7 +33,7 @@ export default function SingleDog() {
             >
               &larr; Terug
             </Link>
-            <article className="grid grid-cols-1 gap-8 p-8 md:grid-cols-2">
+            <article className="grid grid-cols-1 gap-8 pt-8 md:grid-cols-2">
               <div className="bg-slate-100 p-4 rounded">
                 <h1 className="text-3xl font-bold text-slate-800 mb-8 lg:text-5xl">
                   {dog.naam}
@@ -68,8 +68,17 @@ export default function SingleDog() {
                 className="rounded h-50 w-50 object-scale-down"
               />
             </article>
+            <article className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4 my-10">
+              {dog.fotos.map((foto) => (
+                <img
+                  src={`https://dierenasiels.com/${foto.filename}`}
+                  alt={dog.naam}
+                  className="rounded h-50 w-50 object-scale-down"
+                />
+              ))}
+            </article>
             <article>
-              <p className="p-8 text-slate-800 mb-8 lg:text-base leading-loose lg:leading-relaxed">
+              <p className="text-slate-800 mb-8 lg:text-base leading-loose lg:leading-relaxed">
                 {dog.omschrijving}
               </p>
             </article>
